@@ -19,8 +19,16 @@ if (!proc.Start())
     return;
 }
 
+var cts = new CancellationTokenSource(100);
+
+cts.Token.Register(() => {
+    Console.WriteLine("Cancellation token canceled");
+});
+
 var memory = new Memory<char>(new char[10]);
-await proc.StandardOutput.ReadAsync(memory, new CancellationTokenSource(100).Token);
+Console.WriteLine("Start reading");
+await proc.StandardOutput.ReadAsync(memory, cts.Token);
+Console.WriteLine("Read unlocked");
 
 proc.Kill();
 

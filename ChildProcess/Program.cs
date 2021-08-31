@@ -1,15 +1,6 @@
 ﻿using System.Threading;
 
-namespace ChildProcess
+while (true)
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            while (true)
-            {
-                Thread.Sleep(1000);
-            }
-        }
-    }
+    Thread.Sleep(1000);
 }

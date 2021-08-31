@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFrameworks>net50</TargetFrameworks>
-    <LangVersion>9</LangVersion>
+    <TargetFrameworks>net50;net60</TargetFrameworks>
+    <LangVersion>10</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
